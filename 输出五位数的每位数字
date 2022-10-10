@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int a;
+	cout << "请输入一个五位数：";
+	cin >> a;
+	int b = a / 10000;
+	int c = a / 1000 % 10;
+	int d = a / 100 % 10;
+	int e = a / 10 % 10;
+	int f = a % 10;
+	cout << "该数的第一位为：" << b << endl;
+	cout << "该数的第二位为：" << c << endl;
+	cout << "该数的第三位为：" << d << endl;
+	cout << "该数的第四位为：" << e << endl;
+	cout << "该数的第五位为：" << f << endl;
+  return 0;
+}
