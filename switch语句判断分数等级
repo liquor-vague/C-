@@ -1,0 +1,33 @@
+//百分制分数用switch语句判断等级 
+#include <iostream>
+using namespace std;
+int main() {
+	int a, b, sum;
+	cout << "输入该学生的两门课成绩（百分制）:";
+	cin >> a >> b;
+	sum = a + b;
+	int c=sum/10;
+	switch(c) {
+		case 20:
+		case 19:
+		case 18:
+			cout << sum << "----〉A" << endl;
+			break;
+		case 17:
+		case 16:
+			cout << sum << "----〉B" << endl;
+			break;
+		case 15:
+		case 14:
+			cout << sum << "----〉C" << endl;
+			break;
+		case 13:
+		case 12:
+			cout << sum << "----〉D" << endl;
+			break;
+		default:
+			cout << sum << "----〉E" << endl;
+			break;
+	}
+	return 0;
+}
