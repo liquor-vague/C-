@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int n;
+	cout << "请输入一个数：";
+	cin >> n;
+	for (int i = 1; i < n; i++) {
+		int a;
+		a = n % i;
+		if (a == 0 && n!=2) {
+			cout <<n<<"不是素数" << endl;
+			break;
+		}
+		else if (a==1||n==2) {
+			cout << n << "是素数" << endl;
+			break;
+		}
+	};
+	return 0;
+}
