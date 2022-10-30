@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int i,j,k,n;
+	char a;
+	cout<<"请输入组成三角形的符号：";
+	cin>>a;
+	cout<<"请输入三角形的行数：";
+	cin>>n;
+	for(i=1;i<=n;i++){
+	for(j=n-i;j>0;j--){
+		cout<<" "; 
+	};
+	for(k=0;k<2*i-1;k++){
+		cout<<a;
+	};
+	cout<<endl;
+	};
+	return 0;
+}
