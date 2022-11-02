@@ -1,0 +1,32 @@
+//洛谷 P5707 【深基2.例12】上学迟到 
+//写了三天bug终于写出来了
+#include<iostream>
+using namespace std;
+int main(){
+	int s,v,time,min,hour,n;
+	cin>>s>>v;
+	//计算总时间
+	if(s%v!=0){
+		time=s/v+11;
+	}
+	else {
+		time=s/v+10;
+	};
+	//计算小时
+	if(time%60==0){
+		n=time/60;
+	}
+	else{n=time/60+1;
+	};
+	//计算分钟
+	min=60-(time%60);
+	
+	if(time>8*60)hour=24+8-n;
+	else hour=8-n;
+	//表达格式
+	if(hour<10&min<10)cout<<"0"<<hour<<":"<<"0"<<min;
+	else if(hour<10&&min>10)cout<<"0"<<hour<<":"<<min;
+	else if(hour>10&&min<10)cout<<hour<<":"<<"0"<<min;
+	else cout<<hour<<":"<<min;
+	return 0;
+}
