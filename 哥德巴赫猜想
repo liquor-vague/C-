@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+int prime(int x) {
+	int m=2;
+	for(m; m<=x; m++) {
+		if(x%m==0&&m!=x)return 0;
+		else if(m==x) return x;
+	};
+};
+int main() {
+	int n,a=1,b,x1,x2,f=1;
+	cout<<"请输入一个不小于6的偶数：";
+	cin>>n;
+	//判断是否为素数
+	while(f) {
+			a+=2;
+		b=n-a;
+		x1=prime(a);
+		if(x1==a) {
+			x2=prime(b);
+			if(x2==b)f=0;
+		};
+	};
+	cout<<n<<'='<<x1<<'+'<<x2;
+	return 0;
+}
