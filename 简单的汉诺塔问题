@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+//递归算法 
+int hanio(int n,char a,char b,char c) {
+if(1==n) cout<<a<<"->"<<c<<endl;
+else{hanio(n-1,a,c,b);
+cout<<a<<"->"<<c<<endl;
+hanio(n-1,b,a,c);
+}
+
+};
+int main() {
+	int n;
+	cin>>n;//输入盘子的个数
+	hanio(n,'A','B','C') ;
+	return 0;
+}
