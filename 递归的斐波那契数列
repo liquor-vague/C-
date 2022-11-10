@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int a=0;
+//递归的斐波那契数列 
+int Fibonacci(int n) {
+	if(n==1) a=0;//首项从0开始 
+	else if(n==2)a=1;//第二项为1 
+	else a=Fibonacci(n-1)+Fibonacci(n-2);
+	return a;
+}
+int main() {
+	int n,b;
+	cin>>n;//输入所求的项是第几项 
+	b=Fibonacci(n);
+	cout<<b<<endl;
+	return 0;
+}
