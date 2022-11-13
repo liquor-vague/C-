@@ -1,9 +1,9 @@
-//¸ß¾«¶È¼Ó·¨
+//é«˜ç²¾åº¦åŠ æ³•
 #include<bits/stdc++.h>
 using namespace std;
 char s1[505],s2[505];
 int a[505],b[505],c[505];
-//maxº¯Êý 
+//maxå‡½æ•° 
 int max(int a,int b){
 	if(a>b)return a;
 	else return b;
@@ -11,15 +11,15 @@ int max(int a,int b){
 int main() {
 	int la,lb,lc;
 	int i,j;
-	scanf("%s",s1);//´Ós1[0]¿ªÊ¼´¢´æ 
+	scanf("%s",s1);//ä»Žs1[0]å¼€å§‹å‚¨å­˜ 
 	scanf("%s",s2);
-	la=strlen(s1);//Çó×Ö·û´®³¤¶È 
+	la=strlen(s1);//æ±‚å­—ç¬¦ä¸²é•¿åº¦ 
 	lb=strlen(s2);
 	for(i =1; i<=la; i++) {
-		a[i]=s1[la-i]-'0';//½«×Ö·û×ªÎªÊý×Ö 
+		a[i]=s1[la-i]-'0';//å°†å­—ç¬¦è½¬ä¸ºæ•°å­— 
 	};
 	for(j=1; j<=lb; j++) {
-		b[j]=s2[lb-j]-'0';//½«×Ö·û×ªÎªÊý×Ö 
+		b[j]=s2[lb-j]-'0';//å°†å­—ç¬¦è½¬ä¸ºæ•°å­— 
 	};
 	lc=max(la,lb)+1;
 	for(i=1;i<=lc;i++){
@@ -27,7 +27,7 @@ int main() {
 		c[i+1]=c[i]/10;
 		c[i]=c[i]%10;
 	};
-	if(c[lc]==0&&lc>0)lc--;//É¾³ýÏÈµ¼0 
+	while(c[lc]==0&&lc>0)lc--;//åˆ é™¤å…ˆå¯¼0 
 	for(i=lc;i>0;i--){
 		printf("%d",c[i]);
 	} ;
