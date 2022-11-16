@@ -36,6 +36,8 @@ int main() {
 	//打印结果 
 	for(i=lc; i>0; i--) {
 		printf("%d",c[i]);
-	}
+	};
+	//注意*0的情况 
+	if(c[lc]==0)printf("0"); 
 	return 0;
 }
