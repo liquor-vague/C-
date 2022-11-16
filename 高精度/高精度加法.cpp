@@ -1,4 +1,4 @@
-//高精度加法
+//高精度加法 
 #include<bits/stdc++.h>
 using namespace std;
 char s1[505],s2[505];
@@ -30,6 +30,8 @@ int main() {
 	while(c[lc]==0&&lc>0)lc--;//删除先导0 
 	for(i=lc;i>0;i--){
 		printf("%d",c[i]);
-	} ;
+	};
+	//考虑0+0的情况 
+	if(c[lc]==0)cout<<"0";
 	return 0;
 }
