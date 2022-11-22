@@ -1,3 +1,4 @@
+//递归的阶乘，不适合大数，会导致栈堆叠过多
 #include<bits/stdc++.h>
 using namespace std;
 long fac(int);
