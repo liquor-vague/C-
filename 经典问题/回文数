@@ -1,0 +1,66 @@
+//在质数排除掉三的倍数和五的倍数就不会超时了 
+#include<iostream>
+#include<string.h>
+#include<cmath>
+using namespace std;
+int array[10];
+int prime(int x) {
+	int a=sqrt(x)+1;
+	for(int i=2; i<=a; i++) {
+		if(x%i==0) {
+			return 0;
+			break;
+		} else if(x%i!=0&&i==a)return x;
+	}
+};
+//回文数
+int palindrome(int y) {
+	int temp=y,count=0;
+	int i=1;
+	memset(array,0,sizeof(array));
+	//求位数
+	while(temp) {
+		array[i]=temp%10;
+		count++;
+		i++;
+		temp/=10;
+	};
+	//位数分奇数和偶数和单位数
+	//单位数
+	if(count==1) {
+		if(array[1]==5||array[1]==7)cout<<array[1]<<endl;
+	}
+	//奇数
+	else if(count%2==1) {
+		for(i=1; i<=count/2+1; i++) {
+			if(i==count/2+1)temp+=array[i]*pow(10,count-i);
+			else {
+				temp+=array[i]*pow(10,count-i)+array[i]*pow(10,i-1);
+			}
+		}
+	}
+	//偶数
+	else {
+		for(i=1; i<=count/2; i++) {
+			temp+=array[i]*pow(10,count-i)+array[i]*pow(10,i-1);
+		}
+	}
+
+	if(y==temp)return y;
+	else return 0;
+};
+int main() {
+	int a,b,x,y;
+	int i;
+	cin>>a>>b;
+	if(a%2==0)a+=1;
+	//if(b%2==0)b+=1;
+	for(i=a; i<=b; i=i+2) {
+		x=prime(i);
+		if(x==i) {
+			y=palindrome(i);
+			if(y==i)cout<<i<<endl;
+		};
+	};
+	return 0;
+}
