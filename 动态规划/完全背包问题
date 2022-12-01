@@ -1,20 +1,20 @@
 #include<iostream>
 using namespace std;
-int cell[35][205],v[35],w[35];//cell´ú±í±³°ü£¬v´ú±íÎïÆ·¼ÛÖµ£¬w´ú±íÎïÆ·ÖØÁ¿
+int cell[35][205],v[35],w[35];//cellä»£è¡¨èƒŒåŒ…ï¼Œvä»£è¡¨ç‰©å“ä»·å€¼ï¼Œwä»£è¡¨ç‰©å“é‡é‡
 int max(int a,int b);
 void sort(int N);
 void dynamic(int N,int M);
 int main() {
 	int M,N;
 	int i,j;
-	//ÊäÈëÊı¾İ
+	//è¾“å…¥æ•°æ®
 	cin>>M>>N;
 	for(i=1; i<=N; i++) {
 		cin>>w[i]>>v[i];
 	};
-	//¶¯Ì¬¹æ»®
+	//åŠ¨æ€è§„åˆ’
 	dynamic(N,M);
-	//Êä³ö×î¼Ñ¹æ»®
+	//è¾“å‡ºæœ€ä½³è§„åˆ’
 	cout<<"max="<<cell[N][M]<<endl;
 	return 0;
 };
@@ -34,14 +34,14 @@ void dynamic(int N,int M) {
 		for(j=1; j<=M; j++) {
 			if(j>=w[i]){
 				tmp=j/w[i];
-				rest1=cell[i-1][j-w[i]]+v[i];//×°Ò»¼ş¸ÃÎïÆ·
-				rest2=cell[i-1][j-tmp*w[i]]+tmp*v[i];//×°¶à¼¸¼ş 
+				rest1=cell[i-1][j-w[i]]+v[i];//è£…ä¸€ä»¶è¯¥ç‰©å“
+				rest2=cell[i-1][j-tmp*w[i]]+tmp*v[i];//è£…å¤šå‡ ä»¶ 
 				 
 			}
 			else rest1=rest2=0;
 			cell[i][j]=max(cell[i-1][j],rest1,rest2);
-			//±È½ÏÉÏÒ»ĞĞÕâ¸ñ±³°üµÄ¼ÛÖµºÍ×°ÏÂµ±Ç°ÎïÆ·µÄ¼ÛÖµ
-			//»ò×°¶à¼¸¼şÕâÖÖÎïÆ· 
+			//æ¯”è¾ƒä¸Šä¸€è¡Œè¿™æ ¼èƒŒåŒ…çš„ä»·å€¼å’Œè£…ä¸‹å½“å‰ç‰©å“çš„ä»·å€¼
+			//æˆ–è£…å¤šå‡ ä»¶è¿™ç§ç‰©å“ 
 		}
 	};
 
